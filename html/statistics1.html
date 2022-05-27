@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/./css/styles2.css">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <title>Internt Fordrevne Mennesker</title>
+</head>
+<body>
+    <div id=header>
+        <div id=headertext><h1>Tilfeller av Intern Fordrivelse</h1></div>
+    </div>
+    <div id=MainContent>
+
+        <div id=left>
+            <h2>Om de visualiserte dataene</h2>
+            <p>
+                På denne siden finner du visualiseringen av to datasett 
+                satt sammen for å formidle sammenhengen, eller mangelen på sammenheng
+                mellom et totalt antall forekomster av internt fordrevne personer
+                i et land, og det totale antallet folkeregistrerte personer i landet.
+                under underoverskriftene står en nøyaktig forklaring av hva hvert datasett
+                representerer.
+            </p>
+            <h2>Datasett 1</h2>
+            <p>
+                Datasett 1 inneholder data om hvor mange totale forekomster det 
+                er av internt fordrevne personer i fire land i Sahel-regionen.
+            </p>
+            <button onclick="update(data1)">Visualiser Totale IFP'er</button>
+            <h2>Datasett 2</h2>
+            <p>
+                Dette datasettet inneholder data om hvor stor andel av
+                befolkningen de internt fordrevne personene utgjør.
+            </p>
+            <button onclick="update(data2)">Visualiser Prosentandel av befolkning</button>
+        </div>
+
+        <div id=VizBox>
+            
+            
+        </div>
+
+    </div>
+
+
+<script type="text/javascript"> </script> 
+<script src="/./js/index.js"> </script> 
+</body>
+</html>
