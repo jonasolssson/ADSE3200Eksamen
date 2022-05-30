@@ -1,5 +1,5 @@
 body{
-    background-color:#F9F9F9;
+    background-color:F3F9FB;
 }
 
 #header{
@@ -39,7 +39,7 @@ h2{
     margin: 5px;
     flex: 50%;
     width: 20vw;
-    background-color: #ededed;
+    background-color: #E4E5E6;
     padding-right: 50px;
     padding-left: 50px;
     padding-top: 20px;

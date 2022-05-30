@@ -1,5 +1,5 @@
 body{
-    background-color:#F9F9F9;
+    background-color:#F3F9FB;
 }
 
 #header{
@@ -30,7 +30,7 @@ h3{
 }
 
 #MainContent{
-    background-color: lightgrey;
+    background-color: #E4E5E6;
     height: auto;
     margin: 10px;
     padding-right: 100px;
@@ -54,7 +54,7 @@ h3{
 }
 
 #reDirect:hover{
-    background-color: aliceblue;
+    background-color: #D1E1E6;
 }
 
 
