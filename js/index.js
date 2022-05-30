@@ -1,3 +1,4 @@
+
 function openPage(pageUrl){
     window.open(pageUrl);
 }
@@ -74,9 +75,7 @@ var svg = d3.select("#VizBox")
        .attr("width", x.bandwidth())
        .attr("height", function(d) { return height - y(d.value); })
        .attr("fill", "#ADD8E6")
-     .merge(u) // get the already existing elements as well
-     .transition() // and apply changes to all of them
-     .duration(1000)
+     
      // By Tomas S.
      // Based on this example:
      // https://bl.ocks.org/alandunning/274bf248fd0f362d64674920e85c1eb7
@@ -89,6 +88,9 @@ var svg = d3.select("#VizBox")
     })
     .on("mouseout", function(d){ tooltip.style("display", "none");})
     // END by Tomas S.
+    .merge(u) // get the already existing elements as well
+    .transition() // and apply changes to all of them
+    .duration(1000)
        
        
   }
@@ -98,11 +100,265 @@ var svg = d3.select("#VizBox")
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Old example 
+
+
+
 /*
-   // By Tomas S.(etter akser)
- var tooltip = d3.select("body").append("div").attr("class", "toolTip");   
- // END by Tomas S.
+// set the dimensions and margins of the graph
+var margin = {top: 30, right: 30, bottom: 60, left: 70},
+
+width = 500 - margin.left - margin.right;
+height = 440 - margin.top - margin.bottom;
+
+
+// append the svg object to the body of the page
+var svg = d3.select("#VizBox")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+
+// Initialize the X axis
+var x = d3.scaleBand()
+  .range([ 0, width ])
+  .padding(0.2);
+var xAxis = svg.append("g")
+  .attr("transform", "translate(0," + height + ")")
+
+// Initialize the Y axis
+var y = d3.scaleLinear()
+  .range([ height, 0]);
+var yAxis = svg.append("g")
+  .attr("class", "myYaxis")
+
+var tooltip = d3.select("body").append("div").attr("class", "toolTip");
+
+// A function that create / update the plot for a given variable:
+function update(selectedVar) {
+
+  // Parse the Data
+  d3.csv("../csv/DataForUse.csv", function(data) {
+
+    // X axis
+    x.domain(data.map(function(d) { return d.group; }))
+    xAxis.transition().duration(1000).call(d3.axisBottom(x))
+
+    // Add Y axis
+    y.domain([0, d3.max(data, function(d) { return +d[selectedVar] }) ]);
+    yAxis.transition().duration(1000).call(d3.axisLeft(y));
+
+    // variable u: map data to existing bars
+    var u = svg.selectAll("rect")
+    .data(data)
+    u  
+     .enter()
+
+     .append("rect") // Add a new rect for each new elements
+
+     .attr("x", function(d) { return x(d.group); })
+
+     .attr("y", function(d) { return y(d.value); })     // Line 61
+
+     .attr("width", x.bandwidth())
+
+     .attr("height", function(d) { return height - y(d.value); }) // Line 65
+
+     .attr("fill", "black")
+
+     // By Tomas S.
+
+     // Based on this example:
+
+     // https://bl.ocks.org/alandunning/274bf248fd0f362d64674920e85c1eb7
+
+     .on("mousemove", function(d){
+
+        tooltip
+
+          .style("left", d3.event.pageX - 75 + "px")
+
+          .style("top", d3.event.pageY + 25 + "px")
+
+          .style("display", "inline-block")
+
+          .html("Land: " + (d.group) + "<br>" + "Personer: " + (d.value));
+
+    })
+
+    .on("mouseout", function(d){ tooltip.style("display", "none");})
+
+    // END by Tomas S.
+
+    .merge(u) // get the already existing elements as well
+
+    .transition() // and apply changes to all of them
+
+    .duration(1000)
+  })
+
+}
+
+// Initialize plot
+update('var1')
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
